@@ -1547,6 +1547,10 @@ int EventMachine_t::DetachFD (EventableDescriptor *ed)
 name2address
 ************/
 
+#ifndef AI_NUMERICSERV
+#define AI_NUMERICSERV 0
+#endif
+
 int EventMachine_t::name2address (const char *server, int port, int socktype, struct sockaddr *addr, size_t *addr_len)
 {
 	if (!server || !*server)
